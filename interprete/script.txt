@@ -1,0 +1,28 @@
+# llamado a los paquetes 
+from ZODB import DB, FileStorage
+import transaction
+
+# se define la fuente física donde se encuentran los datos
+almacen = FileStorage.FileStorage("Datos.fs")
+bd = BD(almacen)
+con = bd.open()
+r = con.root()
+
+# ahora a guardar información 
+r['saludo'] = 'Hola ZODB'
+r['numero'] = 3 + 7j
+r['lista'] = [1, 3, 5.987, True, 'texto']
+
+# para ver las llaves que tenemos almacenadas
+r.keys()
+['lista', 'saludo', 'numero']
+
+# almacenamos los cambios en el archivo de almacén
+transaction.commit()
+
+# cerramos la conexión.
+transaction.get()
+transaction.abort()
+con.close()
+bd.close()
+almacen.close()
