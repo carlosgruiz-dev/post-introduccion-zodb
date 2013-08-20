@@ -1,7 +1,7 @@
 Post Breve Introducción a ZODB
 ==============================
 
-Código fuente que acompaña la publicación http://atmantree.com/go/
+Código fuente que acompaña la publicación http://atmantree.com/go/2013/07/breve-introduccion-a-zodb/
 
 interprete
 ----------
